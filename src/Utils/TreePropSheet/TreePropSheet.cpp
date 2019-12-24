@@ -441,7 +441,7 @@ CString CTreePropSheet::SplitPageTreePath(CString &strRest)
 {
 	int	nSeparatorPos = 0;
 #pragma warning(push)
-#pragma warning(disable: 4127)	// conditional expression constant
+//#pragma warning(disable: 4127)	// conditional expression constant
 	while (TRUE)
 	{
 		nSeparatorPos = strRest.Find(L"::", nSeparatorPos);

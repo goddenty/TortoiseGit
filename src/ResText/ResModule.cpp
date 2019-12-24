@@ -30,7 +30,7 @@
 #include <codecvt>
 
 #pragma warning(push)
-#pragma warning(disable: 4091) // 'typedef ': ignored on left of '' when no variable is declared
+//#pragma warning(disable: 4091) // 'typedef ': ignored on left of '' when no variable is declared
 #include <Imagehlp.h>
 #pragma warning(pop)
 

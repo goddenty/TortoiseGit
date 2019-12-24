@@ -287,6 +287,8 @@ public:
 	{
 		m_pWin=win;
 	};
+
+	virtual ~CChooseVersion() {}
 };
 
 #define CHOOSE_VERSION_DDX \
