@@ -440,8 +440,6 @@ HTREEITEM CTreePropSheet::CreatePageTreeItem(LPCTSTR lpszPath, HTREEITEM hParent
 CString CTreePropSheet::SplitPageTreePath(CString &strRest)
 {
 	int	nSeparatorPos = 0;
-#pragma warning(push)
-#pragma warning(disable: 4127)	// conditional expression constant
 	while (TRUE)
 	{
 		nSeparatorPos = strRest.Find(L"::", nSeparatorPos);
@@ -463,7 +461,6 @@ CString CTreePropSheet::SplitPageTreePath(CString &strRest)
 				++nSeparatorPos;
 		}
 	}
-#pragma warning(pop)
 
 	CString	strItem(strRest.Left(nSeparatorPos));
 	strItem.Replace(L"\\::", L"::");
@@ -672,7 +669,7 @@ void CTreePropSheet::ActivatePreviousPage()
 			hPrevItem = m_pwndPageTree->GetRootItem();
 
 #pragma warning(push)
-#pragma warning(disable: 4127)	// conditional expression constant
+//#pragma warning(disable: 4127)	// conditional expression constant
 			while (TRUE)
 			{
 				while (m_pwndPageTree->GetNextSiblingItem(hPrevItem))

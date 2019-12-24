@@ -339,7 +339,9 @@ inline void DoSortFilenametSortVector(T& vector, bool ignoreCase)
 static const size_t NPOS = static_cast<size_t>(-1); // bad/missing length/position
 static_assert(MAXSIZE_T == NPOS, "NPOS must equal MAXSIZE_T");
 #pragma warning(push)
-#pragma warning(disable: 4309)
+#if _MSC_VER < 1920
+#pragma warning(disable : 4309) // 'static_cast': truncation of constant value
+#endif
 static_assert(-1 == static_cast<int>(NPOS), "NPOS must equal -1");
 #pragma warning(pop)
 
