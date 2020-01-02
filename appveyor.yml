@@ -30,8 +30,7 @@ for:
     matrix:
       only:
         - platform: Win32
-        - configuration: Debug
-  
+          configuration: Debug
     test_script:
     - bin\Debug\bin\tests.exe
     - reg add HKCU\Software\TortoiseGit /v CygwinHack /t REG_DWORD /f /d 1
@@ -45,8 +44,7 @@ for:
     matrix:
       only:
         - platform: x64
-        - configuration: Debug
-  
+          configuration: Debug
     test_script:
     - bin\Debug64\bin\tests.exe
     - reg add HKCU\Software\TortoiseGit /v CygwinHack /t REG_DWORD /f /d 1
@@ -60,8 +58,7 @@ for:
     matrix:
       only:
         - platform: Win32
-        - configuration: Release
-  
+          configuration: Release
     test_script:
     - bin\Release\bin\tests.exe
     - msbuild "src\TortoiseGit.sln" /t:"GitWCRev" /t:"GitWCRevCom" /t:"TortoiseGitSetup\CustomActions" /t:"TortoiseGitSetup\RestartExplorer" /t:"ext\Crash-Server\CrashServerSDK\CrashHandler" /t:"ext\Crash-Server\CrashServerSDK\SendRpt" /m /verbosity:minimal /p:Configuration=%CONFIGURATION% /p:Platform=%PLATFORM% /maxcpucount /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
@@ -71,8 +68,7 @@ for:
     matrix:
       only:
         - platform: x64
-        - configuration: Release
-  
+          configuration: Release
     test_script:
     - bin\Release64\bin\tests.exe
     - msbuild "src\TortoiseGit.sln" /t:"GitWCRev" /t:"GitWCRevCom" /t:"TortoiseGitSetup\CustomActions" /t:"TortoiseGitSetup\RestartExplorer" /t:"ext\Crash-Server\CrashServerSDK\CrashHandler" /t:"ext\Crash-Server\CrashServerSDK\SendRpt" /m /verbosity:minimal /p:Configuration=%CONFIGURATION% /p:Platform=%PLATFORM% /maxcpucount /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
