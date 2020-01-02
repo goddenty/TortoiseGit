@@ -22,6 +22,9 @@ build_script:
 - cd ..\..
 - msbuild "src\TortoiseGit.sln" /t:"test\UnitTests" /m /verbosity:minimal /p:Configuration=%CONFIGURATION% /p:Platform=%PLATFORM% /maxcpucount /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+test_script:
+  - ps: Write-Host "common test script all"
+
 for:
   -
     matrix:
@@ -76,3 +79,5 @@ for:
     - git submodule update --init -- ext/apr ext/apr-util ext/editorconfig ext/OGDF ext/hunspell
     - msbuild "src\TortoiseGit.sln" /t:"TGitCache" /t:"TortoiseGitBlame" /t:"TortoiseGitIDiff" /t:"TortoiseGitMerge" /t:"TortoiseGitPlink" /t:"TortoiseGitProc" /t:"TortoiseGitStub" /t:"TortoiseGitUDiff" /t:"TortoiseShell" /t:"SshAskPass" /t:"tgittouch" /t:"GitWCRev" /t:"GitWCRevCom" /m /verbosity:minimal /p:Configuration=%CONFIGURATION% /p:Platform=%PLATFORM% /maxcpucount /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
+test_script:
+  - ps: Write-Host "common test script all 2"
